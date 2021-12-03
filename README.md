@@ -179,8 +179,8 @@ docker pull brunomsilva/dockdocker:latest
 xhost +local:docker
 ```
 ```
-docker run --rm -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/dri -v <caminho/pasta/windows>:/sharreddata -w /sharreddata brunomsilva/dockdocker:latest bash
+docker run --rm -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/dri -v <caminho/pasta/linux>:/sharreddata -w /sharreddata brunomsilva/dockdocker:latest bash
 ```
-O <caminho/pasta/os> é uma pasta dentro do ambiente que foi criada para a aula por
+O <caminho/pasta/linux> é uma pasta dentro do ambiente que foi criada para a aula por
 exemplo. Nomeando essa pasta podemos ver e armazenar todos os arquivos criados dentro
 dela. Seria, portanto, uma pasta compartilhada entre o sistema Docker e o ambiente usado.
