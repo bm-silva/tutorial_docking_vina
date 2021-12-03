@@ -87,5 +87,100 @@ A imagem precisa ser baixa apenas essa vez. Depois, precisamos apenas rodar-lá.
 vez e digitar:
 
 ```
-docker run --rm -it -v <caminho/pasta/
+docker run --rm -it -v <caminho/pasta/windows>:/sharreddata -w /sharreddata brunomsilva/dockdocker:latest bash
 ```
+
+<p align="center">
+  <img src="https://github.com/bm-silva/tutorial_docking_vina/blob/main/imagens/imagem5.png" width="50%" height="50%"/>
+</p>
+
+O <caminho/pasta/windows> no meu caso é uma pasta dentro do Windows chamada
+C:\Users\lucia\Documents\Curso_BSB\pratica. Nomeando essa pasta eu vou poder ver
+e armazenar todos os arquivos criados dentro dela. Seria, portanto, uma pasta
+compartilhada entre o sistema Docker e o Windows.
+Pronto! Estamos dentro do container Docker.
+
+<p align="center">
+  <img src="https://github.com/bm-silva/tutorial_docking_vina/blob/main/imagens/imagem6.png" width="50%" height="50%"/>
+</p>
+
+Podemos por exemplo abrir o PyMOL (lembre-se de abrir o Xlauch - VcXsrv Windows X Server antes), digitando no terminal: `pymol`:
+
+<p align="center">
+  <img src="https://github.com/bm-silva/tutorial_docking_vina/blob/main/imagens/imagem7.png" width="80%" height="80%"/>
+</p>
+
+7) Para rodar o Docker em ambientes MacOS, digitar:
+```
+xhost +local:docker
+```
+```
+docker run --rm -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/dri -v <caminho/pasta/os>:/sharreddata -w /sharreddata brunomsilva/dockdocker:latest bash
+```
+Lembrando que o <caminho/pasta/os> é uma pasta dentro do ambiente que foi criada
+para a aula por exemplo. Nomeando essa pasta podemos ver e armazenar todos os
+arquivos criados dentro dela. Seria, portanto, uma pasta compartilhada entre o sistema
+Docker e o ambiente usado.
+
+8) Para sair do container Docker basta digitar `exit` no **Terminal**.
+
+## Instalação e preparação do Docker em Sistemas Linux (Ubuntu):
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-
+18-04
+
+No Terminal do Ubuntu:
+```
+sudo apt update
+```
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+```
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+```
+```
+sudo apt update
+```
+```
+apt-cache policy docker-ce
+```
+```
+sudo apt install docker-ce
+```
+```
+sudo systemctl status Docker
+```
+
+Utilizar o Docker sem SUDO:
+```
+sudo groupadd docker
+```
+```
+sudo usermod -aG docker $USER
+```
+
+* Re-logar no seu usuário
+* Digite: `docker run hello-world` para testar se está rodando sem o sudo
+
+## Baixar a imagem no ambiente Linux
+
+Após a instalação dos programas podemos puxar a imagem pronta do Docker que
+queremos (https://hub.docker.com/r/brunomsilva/dockdocker). No Terminal digitar:
+```
+docker pull brunomsilva/dockdocker:latest
+```
+
+## Rodar o Docker em ambientes Linux
+```
+xhost +local:docker
+```
+```
+docker run --rm -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/dri -v <caminho/pasta/windows>:/sharreddata -w /sharreddata brunomsilva/dockdocker:latest bash
+```
+O <caminho/pasta/os> é uma pasta dentro do ambiente que foi criada para a aula por
+exemplo. Nomeando essa pasta podemos ver e armazenar todos os arquivos criados dentro
+dela. Seria, portanto, uma pasta compartilhada entre o sistema Docker e o ambiente usado.
