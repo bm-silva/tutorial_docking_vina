@@ -1,5 +1,7 @@
 # Tutorial de Docking Molecular utilizando o Pymol e o Vina
 
+Você pode encontrar o tutorial guiado [neste link](https://github.com/bm-silva/tutorial_docking_vina/wiki/Tutorial-%E2%80%93-Visualiza%C3%A7%C3%A3o-Gr%C3%A1fica-com-PyMOL-e-Docking-com-Vina)
+
 ## Instruções dos programas para a parte prática de Docking
 
 Criado por [Bruno Silva](http://lattes.cnpq.br/7610286860591449) e [Lucianna Santos](http://lattes.cnpq.br/8201328048802169).
