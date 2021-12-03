@@ -1,0 +1,12 @@
+receptor = novo_receptor.pdbqt		#Nome do arquivo PDBQT do receptor
+ligand = ligante.pdbqt		#Nome do arquivo PDBQT do ligante
+center_x = 8.417			#Coordenada X do centro da caixa (aqui o centro do ligante)
+center_y = -0.06			#Coordenada Y do centro da caixa (aqui o centro do ligante)
+center_z = 22.273			#Coordenada Z do centro da caixa (aqui o centro do ligante)
+size_x =  25.00			#Tamanho da caixa para o eixo X
+size_y =  25.00			#Tamanho da caixa para o eixo Y	
+size_z =  25.00			#Tamanho da caixa para o eixo Z
+out = novo_docked_ligante.pdbqt	#Nome do arquivo de saída com as poses do docking
+log = novo_docked.log			#Arquivo de log com informações da saída do docking
+num_modes = 10			#Quantidade de poses
+

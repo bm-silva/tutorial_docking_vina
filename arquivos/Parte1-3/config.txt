@@ -1,0 +1,12 @@
+receptor = receptor.pdbqt
+ligand = ligante.pdbqt
+center_x = 8.417
+center_y = -0.06
+center_z = 22.273
+size_x =  25.00
+size_y =  25.00
+size_z =  25.00
+out = docked_ligante.pdbqt
+log = docked.log
+num_modes = 10
+
